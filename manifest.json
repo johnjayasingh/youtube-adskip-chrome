@@ -1,0 +1,15 @@
+{
+    "manifest_version": 2,
+
+    "name": "Youtube Ad Skip",
+    "version": "0.1.0",
+    "description": "Youtube Ad Skip",
+    "browser_action": {
+        "default_icon": "icon.png"
+    },
+    "content_scripts": [{
+        "js": ["adskip.js"],
+        "matches": ["https://www.youtube.com/*"]
+    }]
+
+}
