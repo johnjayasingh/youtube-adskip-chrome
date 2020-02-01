@@ -1,5 +1,5 @@
 setInterval(() => {
-    const adSkip = document.getElementsByClassName('ytp-ad-skip-button');
+    const adsadSkip = document.getElementsByClassName('ytp-ad-skip-button');
     const overlayAds = document.getElementsByClassName('ytp-ad-overlay-container');
     const ads = document.getElementsByClassName('adDisplay');
     const googleView = document.getElementsByClassName('GoogleActiveViewClass');
@@ -10,18 +10,35 @@ setInterval(() => {
     const offer = document.getElementById('offer-module');
     const movieOffer = document.getElementById('ytd-movie-offer-module-renderer');
 
-    const iterations = Math.max([adSkip.length, overlayAds.length, ads.length, googleView.length])
+    if (iterations > 1)
+        for (let i = 0; i < iterations; i++) {
+            if (adSkip[i]) {
+                console.log('adskip')
+                adSkip[i].click();
+            }
+            if (ads[i]) {
+                console.log('ads')
+                ads[i].style.display = "none";
+            }
+            if (googleView[i]) {
+                console.log('googleview')
 
-    for (let i = 0; i < iterations; i++) {
-        if (adSkip[i]) {
-            adSkip[i].click();
+                googleView[i].style.display = "none";
+            }
         }
-        if (ads[i]) {
-            ads[i].style.display = "none";
-        }
-        if (googleView[i]) {
-            googleView[i].style.display = "none";
-        }
+
+
+    if (ads[0]) {
+        ads[0].style.display = "none";
+    }
+
+    if (googleView[0]) {
+        googleView[0].style.display = "none";
+    }
+
+    if (adSkip[0]) {
+        console.log('skipped a ad - support https://github.com/johnjayasingh')
+        adSkip[0].click();
     }
 
     if (playerAds) {
