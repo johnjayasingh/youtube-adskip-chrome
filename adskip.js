@@ -1,5 +1,5 @@
 setInterval(() => {
-    const adsadSkip = document.getElementsByClassName('ytp-ad-skip-button');
+    const adSkip = document.getElementsByClassName('ytp-ad-skip-button');
     const overlayAds = document.getElementsByClassName('ytp-ad-overlay-container');
     const ads = document.getElementsByClassName('adDisplay');
     const googleView = document.getElementsByClassName('GoogleActiveViewClass');
@@ -9,6 +9,8 @@ setInterval(() => {
     const homeAd = document.getElementById('masthead-ad');
     const offer = document.getElementById('offer-module');
     const movieOffer = document.getElementById('ytd-movie-offer-module-renderer');
+
+    const iterations = Math.max([adSkip.length, overlayAds.length, ads.length, googleView.length])
 
     if (iterations > 1)
         for (let i = 0; i < iterations; i++) {
